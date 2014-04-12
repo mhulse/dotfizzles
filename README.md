@@ -1,6 +1,6 @@
 # Dotfizzles
 
-![ls -ltr](dotfiles.png)
+![ls -ltr](dotfizzles.png)
 **Fo shizzle … Dotfizzles in the hizzay dirz!**
 
 ---
@@ -20,7 +20,7 @@ Big ups goes out to [Barry Clark’s Bashstrap code](https://github.com/barrycla
 1. Install Dotfizzles into your home directory:
 
  ```bash
- cd; curl -#L https://github.com/barryclark/bashstrap/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,screenshot.png}
+ cd; curl -#L https://github.com/mhulse/dotfizzles/tarball/master | tar -xzv --strip-components 1 --exclude={.editorconfig,.gitattributes,dotfizzles.png,LICENSE,README.md}
  ```
 
 ---

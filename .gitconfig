@@ -1,0 +1,35 @@
+# http://git-scm.com/book/en/Customizing-Git-Git-Configuration
+[user]
+  name = Micky Hulse
+  email = mickyhulse@gmail.com
+[alias]
+  lol = !git log --graph --oneline --date-order --decorate --color --all -n 250
+[core]
+  autocrlf = false
+  # Use custom `.gitignore`:
+  excludesfile = ~/.gitignore
+  # Treat spaces before tabs, lines that are indented with 8 or more
+  # spaces, and all kinds of trailing whitespace as an error:
+  whitespace = space-before-tab,indent-with-non-tab,trailing-space
+[push]
+  default = simple
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
+[color]
+  # Use colors in Git commands that are capable of colored output when
+  # outputting to the terminal:
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan

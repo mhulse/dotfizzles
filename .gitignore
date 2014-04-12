@@ -1,55 +1,6 @@
-# https://github.com/github/gitignore
+# http://git-scm.com/docs/gitignore
 
-# COMPILED SOURCE #
-###################
-
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-*.pyc
-
-# PACKAGES #
-############
-
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# LOGS AND DATABASES #
-######################
-
-*.log
-*.sql
-*.sqlite
-
-# OS GENERATED FILES #
-######################
+# For collaboration’s sake, it’s my preference to use a local .gitignore.
+# For example, see https://github.com/mhulse/gh-boiler
 
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon^M^M
-ehthumbs.db
-Thumbs.db
-
-# MISCULANEOUS #
-################
-
-sitemap.xml.gz*~
-.svn
-.cvs
-*.bak
-*.swp
-
-# PROJECT-SPECIFIC #
-####################
