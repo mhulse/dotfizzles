@@ -12,16 +12,20 @@ Big ups goes out to [Barry Clark’s Bashstrap code](https://github.com/barrycla
 1. Back up your current dotfiles (optional):
 
  ```bash
- mv ~/.bash_profile ~/.bash_profile_backup && mv ~/.bashrc ~/.bashrc_backup && mv ~/.gitconfig ~/.gitconfig_backup && mv ~/.gitignore ~/.gitignore_backup
+ $ mv ~/.bash_profile ~/.bash_profile_backup && mv ~/.bashrc ~/.bashrc_backup && mv ~/.gitconfig ~/.gitconfig_backup && mv ~/.gitignore ~/.gitignore_backup
  ```
 
 1. Install Dotfizzles into your home directory:
 
  ```bash
- cd; curl -#L https://github.com/mhulse/dotfizzles/tarball/master | tar -xzv --strip-components 1 --exclude={.editorconfig,.gitattributes,dotfizzles.png,LICENSE,README.md}
+ $ cd; curl -#L https://github.com/mhulse/dotfizzles/tarball/master | tar -xzv --strip-components 1 --exclude={.editorconfig,.gitattributes,dotfizzles.png,LICENSE,README.md}
  ```
 
-Reload using `$ source .bash_profile`.
+1. Reload:
+
+ ```bash
+ $ source ~/.bash_profile
+ ```
 
 ## WIKI pages:
 
