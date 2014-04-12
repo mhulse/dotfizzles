@@ -1,18 +1,24 @@
 # Dotfizzles
 
 ![ls -ltr](dotfizzles.png)
-**Fo shizzle … Dotfizzles in the hizzay dirz!**
+**Dotfizzles in the hizzay dirz! Fo shizzle.**
 
 ---
 
-Big ups goes out to [Barry Clark’s Bashstrap code](https://github.com/barryclark/bashstrap).
+## What’s this?
+
+My personal dot file setup bash stuffs; use at your own risk. <img width="20" height="20" align="absmiddle" src="https://github.global.ssl.fastly.net/images/icons/emoji/no_mouth.png" alt=":no_mouth:" title=":no_mouth:" class="emoji">
+
+## Big ups …
+
+… goes out to [Barry Clark’s Bashstrap code](https://github.com/barryclark/bashstrap).
 
 ## Installation:
 
 1. Back up your current dotfiles (optional):
 
  ```bash
- $ mv ~/.bash_profile ~/.bash_profile_backup && mv ~/.bashrc ~/.bashrc_backup && mv ~/.gitconfig ~/.gitconfig_backup && mv ~/.gitignore ~/.gitignore_backup
+ $ mv ~/.bash_functions ~/.bash_functions_backup && mv ~/.bash_aliases ~/.bash_aliases_backup && mv ~/.bash_profile ~/.bash_profile_backup && mv ~/.bashrc ~/.bashrc_backup && mv ~/.gitconfig ~/.gitconfig_backup && mv ~/.gitignore ~/.gitignore_backup
  ```
 
 1. Install Dotfizzles into your home directory:
@@ -27,10 +33,19 @@ Big ups goes out to [Barry Clark’s Bashstrap code](https://github.com/barrycla
  $ source ~/.bash_profile
  ```
 
-## WIKI pages:
+## [WIKI](https://github.com/mhulse/dotfizzles/wiki) pages:
 
 * [Bash shell tips and tricks](https://github.com/mhulse/dotfizzles/wiki/Bash-shell-tips-and-tricks)
 * [Terminal tips and miscellany](https://github.com/mhulse/dotfizzles/wiki/Terminal-tips-and-miscellany)
+
+## Links:
+
+* [Bashstrap](https://github.com/barryclark/bashstrap)
+* [jackbash](https://github.com/cep21/jackbash)
+* [Quora: What are some useful .bash_profile and .bashrc tips?](https://www.quora.com/What-are-some-useful-bash_profile-and-bashrc-tips)
+* [commandlinefu.com](http://www.commandlinefu.com/commands/browse)
+* [My Mac OSX Bash Profile](http://natelandau.com/my-mac-osx-bash_profile/)
+* [erwanjegouzo/dotfiles](https://github.com/erwanjegouzo/dotfiles)
 
 ---
 

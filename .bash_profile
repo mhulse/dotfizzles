@@ -1,58 +1,21 @@
 ########################################################################
-# PATHS
+# FUNCTIONS:
 ########################################################################
 
-# https://github.com/wayneeseguin/rvm/issues/2205
-export PATH=$PATH:/mhulse.rvm/bin # Add RVM to PATH for scripting
-
-# Google:
-export PATH=${PATH}:$HOME/gsutil
+if [ -f ~/.bash_functions ]; then
+  . ~/.bash_functions
+fi
 
 ########################################################################
 # ALIASES
 ########################################################################
 
-# if [ -f ~/.bash_aliases ]; then
-#   . ~/.bash_aliases
-# fi
-
-# Open specified files in Sublime Text:
-# "s ." will open the current directory in Sublime
-alias s='open -a "Sublime Text"'
-
-# Color LS:
-colorflag="-G"
-alias ls="command ls ${colorflag}h"
-alias l="ls -lF ${colorflag}" # all files, in long format
-alias la="ls -laF ${colorflag}" # all files inc dotfiles, in long format
-alias lsd='ls -lF ${colorflag} | grep "^d"' # only directories
-alias ll='ls -alFh ${colorflag}'
-
-# Quicker navigation:
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
-# Enable aliases to be sudo’ed:
-alias sudo='sudo '
-
-# Colored up cat!
-# You must install Pygments first - "sudo easy_install Pygments".
-alias c='pygmentize -O style=monokai -f console256 -g'
-
-# Git
-# You must install Git first - ""
-alias gs='git status'
-alias ga='git add .'
-alias gc='git commit -m' # Requires you to type a commit message.
-alias gp='git push'
-
-# Color grep:
-alias grep='grep --color=auto'
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
 
 ########################################################################
-# PROMPT COLORS
+# COLORS
 ########################################################################
 
 # Modified version of @gf3’s Sexy Bash Prompt
@@ -102,20 +65,15 @@ export WHITE
 export BOLD
 export RESET
 
-# Git branch details
-function parse_git_dirty() {
-  [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
-}
-function parse_git_branch() {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
-}
-
 # Change this symbol to something sweet.
 # http://en.wikipedia.org/wiki/Unicode_symbols
 symbol="⚡  "
 
 export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n$symbol\[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
+
+# Always enable GREP colors:
+export GREP_OPTIONS='--color=auto'
 
 # My old prompt color setup:
 # http://noahfrederick.com/blog/2011/lion-terminal-theme-peppermint/
@@ -131,9 +89,32 @@ export PS2="\[$ORANGE\]→ \[$RESET\]"
 # AUTOCOMPLETERS
 ########################################################################
 
-# Homebrew autocomplete:
+# Autocomplete for homebrew:
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
+fi
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  source `brew --prefix`/etc/bash_completion
+fi
+
+# Autocomplete for node:
+if [[ -e ~/.node-completion ]]; then
+  shopt -s progcomp
+  for f in $(command ls ~/.node-completion); do
+    f="$HOME/.node-completion/$f"
+    test -f "$f" && . "$f"
+  done
+fi
+
+# Autocomplete for npm:
+if [[ `which npm` ]]; then
+  eval "$(npm completion 2>/dev/null)"
+fi
+
+# Autocomplete for pip:
+if [[ `which pip` ]]; then
+  eval "`pip completion --bash`"
 fi
 
 # /etc/profile.d/complete-hosts.sh
@@ -156,6 +137,9 @@ _complete_hosts () {
 complete -F _complete_hosts ssh
 complete -F _complete_hosts host
 
+# Autocomplete sudo and man-pages:
+complete -cf sudo man
+
 ########################################################################
 # HISTORY
 ########################################################################
@@ -173,13 +157,14 @@ shopt -s histappend                      # append to history, don't overwrite it
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # Map up & down arrow keys to do fuzzy history search:
-bind '"[A":history-search-backward'
-bind '"[B":history-search-forward'
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
 
 ########################################################################
 # PYTHON
 ########################################################################
 
+# https://github.com/registerguard/registerguard.github.com/wiki/Install-python,-virtualenv,-virtualenvwrapper-in-a-brew-environment
 # Python virtual environments:
 export WORKON_HOME=$HOME/.virtualenvs
 #export WORKON_HOME=/tmp/foo/.virtualenvs
@@ -196,12 +181,21 @@ fi
 # RUBY
 ########################################################################
 
-# Load RVM into a shell session *as a function*.
+# https://github.com/wayneeseguin/rvm/issues/2205
+#export PATH=$PATH:/mhulse.rvm/bin # Add RVM to PATH for scripting
+
+# Ruby Version Manager:
 # http://www.interworks.com/blogs/ckaukis/2013/03/05/installing-ruby-200-rvm-and-homebrew-mac-os-x-108-mountain-lion
 # http://portertech.ca/2010/03/26/homebrew--rvm--awesome/
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-  source "$HOME/.rvm/scripts/rvm";
-fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*.
+
+########################################################################
+# GOOGLE
+########################################################################
+
+# Google Cloud Storage:
+export PATH=${PATH}:$HOME/gsutil # https://developers.google.com/storage/docs/gsutil_install
+alias gsutil-hulse=BOTO_CONFIG=$HOME/.boto-hulse\ gsutil
 
 ########################################################################
 # MISCELLANEOUS
@@ -210,8 +204,13 @@ fi
 # Only show the current directory's name in the tab
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
-# Find symlinks recursive:
-function findlinks() { find $@ -type l -exec ls -l {} \;;}
-
-# init z! (https://github.com/rupa/z)
+# Init z!
+# https://github.com/rupa/z
 . ~/z.sh
+
+# Check the window size after each command and, if necessary, update the
+# values of LINES and COLUMNS:
+shopt -s checkwinsize
+
+# Disables shadow on screenshots:
+defaults write com.apple.screencapture disable-shadow -bool true
