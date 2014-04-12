@@ -18,13 +18,14 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
 1. Back up your current dotfiles (optional):
 
  ```bash
+ # Files must exist before running …
  $ mv ~/.bash_functions ~/.bash_functions_backup && mv ~/.bash_aliases ~/.bash_aliases_backup && mv ~/.bash_profile ~/.bash_profile_backup && mv ~/.bashrc ~/.bashrc_backup && mv ~/.gitconfig ~/.gitconfig_backup && mv ~/.gitignore ~/.gitignore_backup
  ```
 
 1. Install Dotfizzles into your home directory:
 
  ```bash
- $ cd; curl -#L https://github.com/mhulse/dotfizzles/tarball/master | tar -xzv --strip-components 1 --exclude={.editorconfig,.gitattributes,dotfizzles.png,LICENSE,README.md}
+ $ cd; curl -#L https://github.com/mhulse/dotfizzles/tarball/master | tar -xzv --strip-components 1 --exclude={ .editorconfig, .gitattributes, dotfizzles.png, LICENSE, README.md }
  ```
 
 1. Reload:
