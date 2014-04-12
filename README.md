@@ -21,6 +21,13 @@ Big ups goes out to [Barry Clark’s Bashstrap code](https://github.com/barrycla
  cd; curl -#L https://github.com/mhulse/dotfizzles/tarball/master | tar -xzv --strip-components 1 --exclude={.editorconfig,.gitattributes,dotfizzles.png,LICENSE,README.md}
  ```
 
+Reload using `$ source .bash_profile`.
+
+## WIKI pages:
+
+* [Bash shell tips and tricks](https://github.com/mhulse/dotfizzles/wiki/Bash-shell-tips-and-tricks)
+* [Terminal tips and miscellany](https://github.com/mhulse/dotfizzles/wiki/Terminal-tips-and-miscellany)
+
 ---
 
 #### LEGAL
