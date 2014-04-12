@@ -25,7 +25,7 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
 1. Install Dotfizzles into your home directory:
 
  ```bash
- $ cd; curl -#L https://github.com/mhulse/dotfizzles/tarball/master | tar -xzv --strip-components 1 --exclude={ .editorconfig, .gitattributes, dotfizzles.png, LICENSE, README.md }
+ $ cd; curl -#L https://github.com/mhulse/dotfizzles/tarball/master | tar -xzv --strip-components 1 --exclude={.editorconfig,.gitattributes,dotfizzles.png,LICENSE,README.md}
  ```
 
 1. Reload:
