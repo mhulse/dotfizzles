@@ -1,11 +1,27 @@
-# Dotfiles
+# Dotfizzles
 
 ![ls -ltr](dotfiles.png)
-**Aint no thang, jus’ my dotfile setup!**
+**Fo shizzle … Dotfizzles in the hizzay dirz!**
 
 ---
 
-More info coming soon. Word to your momma!
+Big ups goes out to [Barry Clark’s Bashstrap code](https://github.com/barryclark/bashstrap).
+
+## Installation:
+
+1. Back up your current dotfiles (optional):
+
+ ```bash
+ mv ~/.bash_profile ~/.bash_profile_backup
+ mv ~/.bashrc ~/.bashrc_backup
+ mv ~/.gitconfig ~/.gitconfig_backup
+ ```
+
+1. Install Dotfizzles into your home directory:
+
+ ```bash
+ cd; curl -#L https://github.com/barryclark/bashstrap/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,screenshot.png}
+ ```
 
 ---
 
