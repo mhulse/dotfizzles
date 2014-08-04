@@ -89,7 +89,7 @@ export GREP_OPTIONS='--color=auto'
 # AUTOCOMPLETERS
 ########################################################################
 
-# Autocomplete for homebrew:
+# Autocomplete for Homebrew:
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
@@ -98,7 +98,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   source `brew --prefix`/etc/bash_completion
 fi
 
-# Autocomplete for node:
+# Autocomplete for Node:
 if [[ -e ~/.node-completion ]]; then
   shopt -s progcomp
   for f in $(command ls ~/.node-completion); do
@@ -115,6 +115,11 @@ fi
 # Autocomplete for pip:
 if [[ `which pip` ]]; then
   eval "`pip completion --bash`"
+fi
+
+# Autocomplete for Grunt:
+if [[ `which grunt` ]]; then
+  eval "$(grunt --completion=bash)"
 fi
 
 # /etc/profile.d/complete-hosts.sh
