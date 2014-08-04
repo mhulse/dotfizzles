@@ -127,3 +127,7 @@ alias restartdock="killall -KILL Dock"
 # Opens up the IOS Simulator without launching xcode:
 alias iossimulator="(cd /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/ && open -a iPhone\ Simulator.app)"
 
+# XAMPP shortcuts:
+alias xampp='sudo /Applications/XAMPP/xamppfiles/xampp restart'
+alias xampp_stop='sudo /Applications/XAMPP/xamppfiles/xampp stop'
+alias xampp_start='sudo /Applications/XAMPP/xamppfiles/xampp start'
