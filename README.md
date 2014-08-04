@@ -18,7 +18,8 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
 1. Back up your current dotfiles (optional):
 
  ```bash
- # Files must exist before running …
+ # Files must exist before running:
+ # “.bash_functions”, “.bash_aliases”, “.bash_profile”, “.bashrc”, “.gitconfig” and “.gitignore”.
  $ mv ~/.bash_functions ~/.bash_functions_backup && mv ~/.bash_aliases ~/.bash_aliases_backup && mv ~/.bash_profile ~/.bash_profile_backup && mv ~/.bashrc ~/.bashrc_backup && mv ~/.gitconfig ~/.gitconfig_backup && mv ~/.gitignore ~/.gitignore_backup
  ```
 
