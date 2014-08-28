@@ -67,7 +67,7 @@ export RESET
 
 # Change this symbol to something sweet.
 # http://en.wikipedia.org/wiki/Unicode_symbols
-symbol="⚡  "
+symbol="⚡  "
 
 export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n$symbol\[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
@@ -92,10 +92,6 @@ export GREP_OPTIONS='--color=auto'
 # Autocomplete for Homebrew:
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
-fi
-
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  source `brew --prefix`/etc/bash_completion
 fi
 
 # Autocomplete for Node:

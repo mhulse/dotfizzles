@@ -37,6 +37,7 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
 
 ## Notes:
 
+1. Install Brew’s bash completion: `$ brew install bash-completion`.
 1. The `.gitconfig` contains a name and e-mail that you’ll want to change.
 1. I highly recommend the color scheme [Peppermint](http://noahfrederick.com/blog/2011/lion-terminal-theme-peppermint/); here's my terminal settings:
 
