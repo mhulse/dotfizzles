@@ -20,7 +20,7 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
  ```bash
  # Files must exist before running:
  # “.bash_functions”, “.bash_aliases”, “.bash_profile”, “.profile”, “.bashrc”, “.gemrc”, “.gitconfig” and “.gitignore”.
- $ mv ~/.bash_functions ~/.bash_functions_backup && mv ~/.bash_aliases ~/.bash_aliases_backup && mv ~/.bash_profile ~/.bash_profile_backup && mv ~/.profile ~/.profile_backup && mv ~/.gemrc ~/.gemrc_backup && mv ~/.bashrc ~/.bashrc_backup && mv ~/.gitconfig ~/.gitconfig_backup && mv ~/.gitignore ~/.gitignore_backup
+ $ cd; mv ~/.bash_functions ~/.bash_functions_backup && mv ~/.bash_aliases ~/.bash_aliases_backup && mv ~/.bash_profile ~/.bash_profile_backup && mv ~/.profile ~/.profile_backup && mv ~/.gemrc ~/.gemrc_backup && mv ~/.bashrc ~/.bashrc_backup && mv ~/.gitconfig ~/.gitconfig_backup && mv ~/.gitignore ~/.gitignore_backup
  ```
 
 1. Install Dotfizzles into your home directory:
