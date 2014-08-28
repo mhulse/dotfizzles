@@ -1,9 +1,21 @@
 # http://git-scm.com/book/en/Customizing-Git-Git-Configuration
+# https://github.com/tiimgreen/github-cheat-sheet#git-configurations
 [user]
   name = Micky Hulse
   email = mickyhulse@gmail.com
 [alias]
   lol = !git log --graph --oneline --date-order --decorate --color --all -n 250
+  # Requires you to type a commit message:
+  gc = git commit -m
+  gp = git push
+  cm = git commit
+  co = git checkout
+  ac = git add . -A git commit
+  st = git status -sb
+  tags = git tag -l
+  branches = git branch -a
+  remotes = git remote -v
+  lg = git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [core]
   autocrlf = false
   # Use custom `.gitignore`:
@@ -33,3 +45,5 @@
   added = yellow
   changed = green
   untracked = cyan
+[help]
+  autocorrect = 1

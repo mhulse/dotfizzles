@@ -19,8 +19,8 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
 
  ```bash
  # Files must exist before running:
- # “.bash_functions”, “.bash_aliases”, “.bash_profile”, “.bashrc”, “.gitconfig” and “.gitignore”.
- $ mv ~/.bash_functions ~/.bash_functions_backup && mv ~/.bash_aliases ~/.bash_aliases_backup && mv ~/.bash_profile ~/.bash_profile_backup && mv ~/.bashrc ~/.bashrc_backup && mv ~/.gitconfig ~/.gitconfig_backup && mv ~/.gitignore ~/.gitignore_backup
+ # “.bash_functions”, “.bash_aliases”, “.bash_profile”, “.profile”, “.bashrc”, “.gemrc”, “.gitconfig” and “.gitignore”.
+ $ mv ~/.bash_functions ~/.bash_functions_backup && mv ~/.bash_aliases ~/.bash_aliases_backup && mv ~/.bash_profile ~/.bash_profile_backup && mv ~/.profile ~/.profile_backup && mv ~/.gemrc ~/.gemrc_backup && mv ~/.bashrc ~/.bashrc_backup && mv ~/.gitconfig ~/.gitconfig_backup && mv ~/.gitignore ~/.gitignore_backup
  ```
 
 1. Install Dotfizzles into your home directory:
@@ -35,6 +35,13 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
  $ source ~/.bash_profile
  ```
 
+## Notes:
+
+1. The `.gitconfig` contains a name and e-mail that you’ll want to change.
+1. I highly recommend the color scheme [Peppermint](http://noahfrederick.com/blog/2011/lion-terminal-theme-peppermint/); here's my terminal settings:
+
+ ![screen shot 2014-06-03 at 4 34 13 pm](https://cloud.githubusercontent.com/assets/218624/3167953/9ca16924-eb77-11e3-9660-3eb980b669d6.png)
+
 ## [WIKI](https://github.com/mhulse/dotfizzles/wiki) pages:
 
 * [Bash shell tips and tricks](https://github.com/mhulse/dotfizzles/wiki/Bash-shell-tips-and-tricks)
@@ -48,6 +55,8 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
 * [commandlinefu.com](http://www.commandlinefu.com/commands/browse)
 * [My Mac OSX Bash Profile](http://natelandau.com/my-mac-osx-bash_profile/)
 * [erwanjegouzo/dotfiles](https://github.com/erwanjegouzo/dotfiles)
+* [Mac OS X Lion Terminal Theme: Peppermint](http://noahfrederick.com/blog/2011/lion-terminal-theme-peppermint/)
+* [GitHub Cheat Sheet: Git Configurations](https://github.com/tiimgreen/github-cheat-sheet#git-configurations)
 
 ---
 

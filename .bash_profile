@@ -166,6 +166,13 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 ########################################################################
+# HOMEBREW
+########################################################################
+
+#export PATH=${PATH}:$HOME/some/path/in/my/home/dir
+export PATH=/usr/local/bin:${PATH}
+
+########################################################################
 # PYTHON
 ########################################################################
 
@@ -186,21 +193,13 @@ fi
 # RUBY
 ########################################################################
 
-# https://github.com/wayneeseguin/rvm/issues/2205
-#export PATH=$PATH:/mhulse.rvm/bin # Add RVM to PATH for scripting
+# Add RVM to PATH for scripting:
+export PATH=$HOME/.rvm/bin:${PATH}
 
-# Ruby Version Manager:
-# http://www.interworks.com/blogs/ckaukis/2013/03/05/installing-ruby-200-rvm-and-homebrew-mac-os-x-108-mountain-lion
-# http://portertech.ca/2010/03/26/homebrew--rvm--awesome/
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*.
-
-########################################################################
-# GOOGLE
-########################################################################
-
-# Google Cloud Storage:
-export PATH=${PATH}:$HOME/gsutil # https://developers.google.com/storage/docs/gsutil_install
-alias gsutil-hulse=BOTO_CONFIG=$HOME/.boto-hulse\ gsutil
+# Source RVM on startup:
+if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+  source $HOME/.rvm/scripts/rvm
+fi
 
 ########################################################################
 # MISCELLANEOUS

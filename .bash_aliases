@@ -2,6 +2,22 @@
 # "s ." will open the current directory in Sublime
 alias s='open -a "Sublime Text"'
 
+# Open one file, or an entire directory of files and folders, from the terminal.
+#
+# Usage:
+#
+# # open the current directory
+# $ subl .
+# # open a directory called tests
+# $ subl ~/Documents/test
+# # open a file called text.txt
+# $ subl test.txt
+# # If there are spaces in the path, you must surround the entire path in double quotes:
+# $ subl "~/Documents/test/my test file.txt"
+# # To view all the commands, open up the help file:
+# $ subl --help
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
 # Color ls:
 colorflag="-G"
 alias ls="command ls ${colorflag}h"
@@ -22,13 +38,6 @@ alias sudo='sudo '
 # Colored up cat!
 # You must install Pygments first - "sudo easy_install Pygments".
 alias c='pygmentize -O style=monokai -f console256 -g'
-
-# Git
-# You must install Git first - ""
-alias gs='git status'
-alias ga='git add .'
-alias gc='git commit -m' # Requires you to type a commit message.
-alias gp='git push'
 
 # Color grep:
 alias grep='grep --color=auto'
@@ -131,3 +140,8 @@ alias iossimulator="(cd /Applications/Xcode.app/Contents/Developer/Platforms/iPh
 alias xampp='sudo /Applications/XAMPP/xamppfiles/xampp restart'
 alias xampp_stop='sudo /Applications/XAMPP/xamppfiles/xampp stop'
 alias xampp_start='sudo /Applications/XAMPP/xamppfiles/xampp start'
+
+# Show hidden files in Finder:
+alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+# Hide hidden files in Finder:
+alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
