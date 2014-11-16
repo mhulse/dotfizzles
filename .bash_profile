@@ -204,10 +204,6 @@ fi
 # Only show the current directory's name in the tab
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
-# Init z!
-# https://github.com/rupa/z
-. ~/z.sh
-
 # Check the window size after each command and, if necessary, update the
 # values of LINES and COLUMNS:
 shopt -s checkwinsize
