@@ -13,7 +13,7 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
 
 … goes out to [Barry Clark’s Bashstrap code](https://github.com/barryclark/bashstrap).
 
-## Installation:
+## Installation
 
 1. Back up your current dotfiles (optional):
 
@@ -35,7 +35,7 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
  $ source ~/.bash_profile
  ```
 
-## Notes:
+## Notes
 
 1. Install Brew’s bash completion: `$ brew install bash-completion`.
 1. The `.gitconfig` contains a name and e-mail that you’ll want to change.
@@ -43,12 +43,12 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
 
  ![screen shot 2014-06-03 at 4 34 13 pm](https://cloud.githubusercontent.com/assets/218624/3167953/9ca16924-eb77-11e3-9660-3eb980b669d6.png)
 
-## [WIKI](https://github.com/mhulse/dotfizzles/wiki) pages:
+## [WIKI](https://github.com/mhulse/dotfizzles/wiki) pages
 
 * [Bash shell tips and tricks](https://github.com/mhulse/dotfizzles/wiki/Bash-shell-tips-and-tricks)
 * [Terminal tips and miscellany](https://github.com/mhulse/dotfizzles/wiki/Terminal-tips-and-miscellany)
 
-## Links:
+## Links
 
 * [Bashstrap](https://github.com/barryclark/bashstrap)
 * [jackbash](https://github.com/cep21/jackbash)
