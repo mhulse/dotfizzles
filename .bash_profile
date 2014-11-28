@@ -180,9 +180,9 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
-    source /usr/local/bin/virtualenvwrapper.sh
+  source /usr/local/bin/virtualenvwrapper.sh
 else
-    echo "WARNING: Can't find virtualenvwrapper.sh"
+  echo "WARNING: Can't find virtualenvwrapper.sh"
 fi
 
 ########################################################################
