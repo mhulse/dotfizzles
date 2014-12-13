@@ -162,13 +162,6 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 ########################################################################
-# HOMEBREW
-########################################################################
-
-#export PATH=${PATH}:$HOME/some/path/in/my/home/dir
-export PATH=/usr/local/bin:${PATH}
-
-########################################################################
 # PYTHON
 ########################################################################
 
@@ -186,16 +179,11 @@ else
 fi
 
 ########################################################################
-# RUBY
+# RVM
 ########################################################################
 
-# Add RVM to PATH for scripting:
-export PATH=$HOME/.rvm/bin:${PATH}
-
-# Source RVM on startup:
-if [[ -s $HOME/.rvm/scripts/rvm ]]; then
-  source $HOME/.rvm/scripts/rvm
-fi
+# Load RVM into a shell session *as a function*:
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 ########################################################################
 # MISCELLANEOUS
