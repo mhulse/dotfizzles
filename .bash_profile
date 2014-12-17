@@ -172,7 +172,7 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
-if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
+if [[ -r `which virtualenvwrapper.sh` ]]; then
   #source /usr/local/bin/virtualenvwrapper.sh
   source `which virtualenvwrapper.sh`
 else
