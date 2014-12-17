@@ -165,15 +165,16 @@ bind '"\e[B": history-search-forward'
 # PYTHON
 ########################################################################
 
-# https://github.com/registerguard/registerguard.github.com/wiki/Install-python,-virtualenv,-virtualenvwrapper-in-a-brew-environment
 # Python virtual environments:
 export WORKON_HOME=$HOME/.virtualenvs
-#export WORKON_HOME=/tmp/foo/.virtualenvs
+export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+export VIRTUALENVWRAPPER_PYTHON=`which python3`
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
-  source /usr/local/bin/virtualenvwrapper.sh
+  #source /usr/local/bin/virtualenvwrapper.sh
+  source `which virtualenvwrapper.sh`
 else
   echo "WARNING: Can't find virtualenvwrapper.sh"
 fi
