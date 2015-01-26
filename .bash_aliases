@@ -68,15 +68,7 @@ alias ssh='ssh -A'
 
 alias dt='date "+%F %T"'
 
-# Make these commands ask before clobbering a file.
-# Use -f to override.
-alias rm="rm -i"
-alias cp="cp -i"
-alias mv="mv -i"
-
-alias reload='source ~/.bash_profile' # Reloads session.
-
-alias rm=safe_rm # See .bash_functions for details.
+alias reload='source ~/.bash_{profile,aliases,functions}' # Reloads session.
 
 # Quickly search for file:
 alias qfind="find . -name "
