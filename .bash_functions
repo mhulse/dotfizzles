@@ -99,22 +99,6 @@ function ip2loc() {
   wget -qO - www.ip2location.com/$1 | grep "<span id=\"dgLookup__ctl2_lblICountry\">" | sed 's/<[^>]*>//g; s/^[\t]*//; s/&quot;/"/g; s/</</g; s/>/>/g; s/&amp;/\&/g';
 }
 
-# In case you rm a file by mistake:
-
-function safe_rm() {
-  local d t f s
-  [ -z "$PS1" ] && (/bin/rm "$@"; return)
-  d="${TRASH_DIR:=$HOME/.__trash}/`date +%W`"
-  t=`date +%F_%H-%M-%S`
-  [ -e "$d" ] || mkdir -p "$d" || return
-  for f do
-    [ -e "$f" ] || continue
-    s=`basename "$f"`
-    /bin/mv "$f" "$d/${t}_$s" || break
-  done
-  echo -e "[$? $t `whoami` `pwd`]$@\n" >> "$d/00rmlog.txt"
-}
-
 # Find file under the current directory:
 function ff() {
   /usr/bin/find . -name "$@" ;
