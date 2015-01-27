@@ -37,6 +37,8 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
  ```bash
  $ source ~/.bash_profile && reload
  ```
+ 
+  I'd also suggest restarting your computer.
 
 ## Notes
 
