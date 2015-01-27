@@ -35,7 +35,7 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
 1. Reload:
 
  ```bash
- $ source ~/.bash_profile
+ $ source ~/.bash_profile && reload
  ```
 
 ## Notes
