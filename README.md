@@ -44,7 +44,7 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
 1. The `.gitconfig` contains a name and e-mail that you’ll want to change.
 1. I highly recommend the color scheme [Peppermint](http://noahfrederick.com/blog/2011/lion-terminal-theme-peppermint/); here's my terminal settings:
 
-![general-settings](https://cloud.githubusercontent.com/assets/218624/5911032/e0c5e540-a575-11e4-99e1-fc2764de4db8.png)
+ ![general](https://cloud.githubusercontent.com/assets/218624/5911211/840e2252-a577-11e4-9e13-4301c30ca982.png)
 
  ![profiles](https://cloud.githubusercontent.com/assets/218624/3167953/9ca16924-eb77-11e3-9660-3eb980b669d6.png)
 
