@@ -38,7 +38,7 @@ My personal dot file setup bash stuffs; use at your own risk. <img width="20" he
  $ source ~/.bash_profile && reload
  ```
  
-  I'd also suggest restarting your computer.
+1. This is optional, but I’d suggest restarting your computer (this will get `defaults write ...` working).
 
 ## Notes
 
