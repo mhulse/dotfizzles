@@ -106,11 +106,6 @@ alias openPorts='sudo lsof -i | grep LISTEN'
 # All ipfw rules inc/ blocked IPs:
 alias showBlocked='sudo ipfw list'
 
-# Show hidden files in Finder:
-alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
-# Hide hidden files in Finder:
-alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
-
 # Removes a bunch of crap from your finder:
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete && find . -name 'Thumbs.db' -type f -ls -delete"
 
