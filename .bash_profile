@@ -195,6 +195,13 @@ fi
 export PATH=${PATH}:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
 ########################################################################
+# Java
+########################################################################
+
+# http://superuser.com/a/777469
+export JAVA_HOME='/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home'
+
+########################################################################
 # MISCELLANEOUS
 ########################################################################
 
