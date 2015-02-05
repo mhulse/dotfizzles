@@ -162,18 +162,6 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 ########################################################################
-# PYTHON
-########################################################################
-
-# Default Python
-# http://docs.webfaction.com/software/python.html#creating-a-python-alias
-alias python=python3.4
-# Default pyvenv
-alias pyvenv=pyvenv-3.4
-# Default pip
-alias pip=pip3.4
-
-########################################################################
 # RVM
 ########################################################################
 
