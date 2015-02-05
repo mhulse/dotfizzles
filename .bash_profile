@@ -165,19 +165,13 @@ bind '"\e[B": history-search-forward'
 # PYTHON
 ########################################################################
 
-# Python virtual environments:
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-export VIRTUALENVWRAPPER_PYTHON=`which python3`
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_RESPECT_VIRTUALENV=true
-if [[ -r `which virtualenvwrapper.sh` ]]; then
-  #source /usr/local/bin/virtualenvwrapper.sh
-  source `which virtualenvwrapper.sh`
-else
-  echo "WARNING: Can't find virtualenvwrapper.sh"
-fi
+# Default Python
+# http://docs.webfaction.com/software/python.html#creating-a-python-alias
+alias python=python3.4
+# Default pyvenv
+alias pyvenv=pyvenv-3.4
+# Default pip
+alias pip=pip3.4
 
 ########################################################################
 # RVM
