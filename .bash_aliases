@@ -132,3 +132,10 @@ alias xampp_start='sudo /Applications/XAMPP/xamppfiles/xampp start'
 alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 # Hide hidden files in Finder:
 alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+# Default Python
+alias python=python3.4
+# Default pyvenv
+alias pyvenv=pyvenv-3.4
+# Default pip
+alias pip=pip3.4
