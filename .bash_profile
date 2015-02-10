@@ -184,6 +184,13 @@ export PATH=${PATH}:/Applications/Postgres.app/Contents/Versions/9.3/bin
 export JAVA_HOME='/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home'
 
 ########################################################################
+# Apache Tomcat
+########################################################################
+
+# http://tomcat.apache.org/
+export CATALINA_HOME='/Applications/tomcat' # Symlinked to latest Tomcat version.
+
+########################################################################
 # MISCELLANEOUS
 ########################################################################
 

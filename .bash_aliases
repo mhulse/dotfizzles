@@ -139,3 +139,10 @@ alias python=python3.4
 alias pyvenv=pyvenv-3.4
 # Default pip
 alias pip=pip3.4
+
+# Apache Tomcat start:
+# $ tomcat
+# $ tomcat start
+# Tomcat stop:
+# $ tomcat stop
+alias tomcat=catalina

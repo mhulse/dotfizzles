@@ -178,3 +178,18 @@ function randpassw() {
   done
   echo
 }
+
+# Shortcut function to control Apache Tomcat Catalina script:
+catalina() {
+  # Long-hand version:
+  # Start:
+  # $CATALINA_HOME/bin/startup.sh
+  # ... or:
+  # $CATALINA_HOME/bin/catalina.sh start
+  # Stop:
+  # $CATALINA_HOME/bin/shutdown.sh
+  # ... or:
+  # $CATALINA_HOME/bin/catalina.sh stop
+  # See .bash_aliases for related alias.
+  $CATALINA_HOME/bin/catalina.sh ${1:-start};
+}
