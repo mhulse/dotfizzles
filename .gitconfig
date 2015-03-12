@@ -4,22 +4,32 @@
   name = Micky Hulse
   email = mickyhulse@gmail.com
 [alias]
+  # http://haacked.com/archive/2014/07/28/github-flow-aliases/
+  amend = commit -a --amend
+  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+  bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+  branches = branch -a
+  cm = !git add -A && git commit -m
+  cm = commit
+  co = checkout
+  cob = checkout -b
+  ec = config --global -e
+  gc = commit -m
+  gp = push
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   lol = !git log --graph --oneline --date-order --decorate --color --all -n 250
-  # Requires you to type a commit message:
-  gc = git commit -m
-  gp = git push
-  cm = git commit
-  co = git checkout
-  ac = git add . -A git commit
-  st = git status -sb
-  tags = git tag -l
-  branches = git branch -a
-  remotes = git remote -v
-  lg = git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  remotes = remote -v
+  save = !git add -A && git commit -m 'SAVEPOINT'
+  st = status -sb
+  tags = tag -l
+  undo = reset HEAD~1 --mixed
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  wip = !git add -u && git commit -m "WIP"
+  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 [core]
   autocrlf = false
   # Use custom `.gitignore`:
-  excludesfile = ~/.gitignore
+  excludesfile = /Users/mhulse/.gitignore
   # Treat spaces before tabs, lines that are indented with 8 or more
   # spaces, and all kinds of trailing whitespace as an error:
   whitespace = space-before-tab,indent-with-non-tab,trailing-space
@@ -49,3 +59,13 @@
   untracked = cyan
 [help]
   autocorrect = 1
+[filter "hawser"]
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
