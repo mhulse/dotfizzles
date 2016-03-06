@@ -52,11 +52,9 @@ function choose() {
 	read -p "Back up previous versions (y/n)? " choice
 	case "$choice" in
 		y|Y)
-			echo "yes"
 			install 1
 			;;
 		n|N)
-			echo "no"
 			install
 			;;
 		*)
