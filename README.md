@@ -14,13 +14,15 @@ From the command line, run:
 bash <(curl -sL https://git.io/v2A8D)
 ```
 
-1. Reload:
+Reload your current session:
 
- ```bash
- $ source ~/.bash_profile && reload
- ```
+```bash
+$ source ~/.bash_profile && reload
+```
+
+… or restart your terminal app.
  
-1. Optional, but I’d suggest restarting your computer (this will get `defaults write ...` working).
+Restart your computer to get `defaults write ...` working.
 
 ## Notes
 
