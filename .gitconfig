@@ -1,25 +1,34 @@
 # http://git-scm.com/book/en/Customizing-Git-Git-Configuration
 # https://github.com/tiimgreen/github-cheat-sheet#git-configurations
+# http://haacked.com/archive/2014/07/28/github-flow-aliases/
 [user]
   name = Micky Hulse
   email = mickyhulse@gmail.com
 [alias]
-  # http://haacked.com/archive/2014/07/28/github-flow-aliases/
   amend = commit -a --amend
   bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
   bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+  br = branch
   branches = branch -a
+  ci = commit
   cm = !git add -A && git commit -m
-  cm = commit
   co = checkout
   cob = checkout -b
+  df = diff
   ec = config --global -e
+  g = grep -I
   gc = commit -m
   gp = push
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  lg = log -p
   lol = !git log --graph --oneline --date-order --decorate --color --all -n 250
+  loq = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  pb = publish-branch
+  rb = rbranch
+  rc = rank-contributors
   remotes = remote -v
+  rv = review
   save = !git add -A && git commit -m 'SAVEPOINT'
+  sm = show-merges
   st = status -sb
   tags = tag -l
   undo = reset HEAD~1 --mixed
@@ -37,6 +46,12 @@
   ignorecase = false
 [push]
   default = simple
+[merge]
+  log = true
+[rerere]
+  enabled = 1
+[branch]
+  autosetuprebase = always
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
@@ -65,7 +80,21 @@
   required = true
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path = 
+  path =
 [mergetool "sourcetree"]
   cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
+[url "git@github.com:"]
+  insteadOf     = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+  insteadOf = "github:"
+[url "git@gist.github.com:"]
+  insteadOf     = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+[url "git@heroku.com:"]
+  insteadOf = "heroku:"

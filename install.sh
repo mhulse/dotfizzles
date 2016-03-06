@@ -1,0 +1,77 @@
+#!/bin/bash
+
+# http://www.unixcl.com/2008/03/creating-menus-using-select-bash.html
+# http://askubuntu.com/questions/1705/how-can-i-create-a-select-menu-in-a-shell-script
+# http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_06.html
+# http://unix.stackexchange.com/questions/257290
+# http://www.thegeekstuff.com/2010/07/bash-case-statement/
+
+# Install files:
+function install() {
+	
+	now=`date '+%Y%m%d%H%M%S'`;
+	
+	# Switch to user’s home directory:
+	cd $HOME
+	
+	if (($1)); then
+		zip -r archive_name.zip noexist.foo > /dev/null 2>&1
+		zip -r "dotfizzles.$now.zip" \
+		       ".bash" \
+		       ".bash_profile" \
+		       ".bashrc" \
+		       ".gemrc" \
+		       ".gitconfig" \
+		       ".gitignore" \
+		       ".hushlogin" \
+		       ".npmrc" \
+		       ".profile" \
+		       ".vimrc" \
+		       ".zshrc" \
+		       "mm.cfg" \
+		       > /dev/null 2>&1
+		
+	fi
+	
+	# Get the zip file and extract all files:
+	curl -sS -#L https://github.com/mhulse/dotfizzles/tarball/master | tar -xzv --strip-components 1 --exclude={install.sh,README.md}
+	
+	# Let the use know that we are done:
+	echo $'\n'"Congrats! Installation was successful!"$'\n'
+	
+	# Open installation folder:
+	open "./"
+	
+	exit 0
+	
+}
+
+# Pick Illustrator version:
+function choose() {
+	
+	read -p "Back up previous versions (y/n)? " choice
+	case "$choice" in
+		y|Y)
+			echo "yes"
+			install 1
+			;;
+		n|N)
+			echo "no"
+			install
+			;;
+		*)
+			echo "Your choice (${choice}) does not compute. Goodbye."
+			;;
+	esac
+	
+}
+
+# Tidy up the terminal window:
+clear
+
+# Create menu:
+choose
+
+# Done!
+# For more information about this script, see:
+# https://github.com/mhulse/dotfizzles
