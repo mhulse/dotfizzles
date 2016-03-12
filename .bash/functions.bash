@@ -230,3 +230,13 @@ catalina() {
   # See .bash_aliases for related alias.
   $CATALINA_HOME/bin/catalina.sh ${1:-start};
 }
+
+# Freshen up your homebrew:
+freshbrew() {
+  brew doctor
+  brew update
+  brew upgrade
+  brew cleanup
+  brew prune
+  brew doctor
+}
