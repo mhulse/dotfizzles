@@ -14,20 +14,15 @@ From the command line, run:
 bash <(curl -sL https://git.io/v2A8D)
 ```
 
-Reload your current session:
+… and restart your terminal app.
 
-```bash
-$ source ~/.bash_profile && reload
-```
-
-… or restart your terminal app.
- 
-Restart your computer to get `defaults write ...` working.
+To get `defaults write ...` working, restart your computer.
 
 ## Notes
 
 1. Install Brew’s bash completion: `$ brew install bash-completion`.
 1. The `.gitconfig` contains a name and e-mail that you’ll want to change.
+1. Reload your current session: `$ source ~/.bash_profile && reload`.
 1. Check out the [WIKI](../../wiki) for more info.
 
 ## License (MIT)

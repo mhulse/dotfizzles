@@ -36,6 +36,8 @@ function install() {
 	# Get the zip file and extract all files:
 	curl -sS -#L https://github.com/mhulse/dotfizzles/tarball/master | tar -xzv --strip-components 1 --exclude={install.sh,README.md}
 	
+	source $HOME/.bash_profile && reload
+	
 	# Let the use know that we are done:
 	echo $'\n'"Congrats! Installation was successful!"$'\n'
 	
