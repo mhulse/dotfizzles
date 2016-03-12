@@ -256,6 +256,6 @@ bottom="\[$STEEL_BLUE\]└─\[$RESET\]"
 #path+='$(eval "echo ${truncated_path}")'"$ "
 
 export PS1=""
-export PS2="\[$ORANGE\]⇢ \[$RESET\]"
+export PS2="\[$ORANGE\]➜ \[$RESET\]"
 
 PROMPT_COMMAND='__git_ps1 "\n\[$top\]\[$user\]\[$at\]\[$host\]\[$colon\]\[$path\] \[$dt\]" "\[$eol\]\n\[$bottom\]\[$char\] \[$prompt\] "'

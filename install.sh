@@ -17,14 +17,15 @@ function install() {
 	if (($1)); then
 		zip -r archive_name.zip noexist.foo > /dev/null 2>&1
 		zip -r "dotfizzles.$now.zip" \
-		       ".scripts" \
 		       ".bash" \
+		       ".scripts" \
 		       ".bash_profile" \
 		       ".bashrc" \
 		       ".gemrc" \
 		       ".gitconfig" \
 		       ".gitignore" \
 		       ".hushlogin" \
+			   ".inputrc" \
 		       ".npmrc" \
 		       ".profile" \
 		       ".zshrc" \

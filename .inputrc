@@ -1,0 +1,71 @@
+#!/bin/bash
+
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+
+# this makes the "delete" key work rather than
+# just entering a ~
+"\e[3~": delete-char
+
+# these allow you to use ctrl+left/right arrow keys
+# to jump the cursor over words
+"\e[5C": forward-word
+"\e[5D": backward-word
+
+# these allow you to start typing a command and
+# use the up/down arrow to auto complete from
+# commands in your history
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+"\e[2~": quoted-insert
+
+# Use Unicode & do NOT use the "8bit hack" to input/output non-ASCII characters
+# See http://code.google.com/p/iterm2/wiki/Keybindings
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# Turn on case insensitivity for tab-completion
+# Ex.: type "doc<tab>" to search for "Documents"
+set completion-ignore-case on
+
+set expand-tilde on
+set show-all-if-ambiguous on
+set visible-stats on
+set -o nano
+
+# Bind the Tab key to cycle completions one at a time instead of listing them all
+# and requiring you to type characters until there’s only one match.
+TAB: menu-complete
+
+# Binding Shift-Tab to go backward:
+"\e[Z": "\e-1\C-i"
+
+# Option-z to run cd - followed by ls, returning you to the previous directory
+# in your stack and doing a file listing.
+"\ez": 'cd -\015ls\015'
+
+# Set mark-symlinked-directories as -- by default -- bash doesn't put a / after
+# symlinks when doing autocomplete. This fixes that.
+set mark-symlinked-directories on
+
+set prefer-visible-bell on
+
+# Assign ^W (Ctrl-w) to be unix-filename-rubout instead of the default unix-word-rubout.
+# This makes it so when you have your cursor (|) positioned here foo/bar/test.txt|
+# and hit C-w, it just deletes up to the first / character. This makes fixing
+# things a bit easier. It also works within a path.
+"\C-w": unix-filename-rubout
+"": unix-filename-rubout
+
+# Bind a key to glob-expand-word which will take a bash glob -- say * -- and
+# replace the glob with all the files that match that glob.
+"\C-x*": glob-expand-word
