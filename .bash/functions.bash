@@ -187,27 +187,27 @@ function randpassw() {
 }
 
 # Image width
-width () {
+function width () {
   echo $(sips -g pixelWidth $1 | grep -oE "[[:digit:]]{1,}$")
 }
 
 # Image height
-height () {
+function height () {
   echo $(sips -g pixelHeight $1 | grep -oE "[[:digit:]]{1,}$")
 }
 
 # All the dig info, 'cause I can never remember it
-digga () {
+function digga () {
   dig +nocmd $1 any +multiline +noall +answer
 }
 
 # Copy w/ progress
-cp_p () {
+function cp_p () {
   rsync -WavP --human-readable --progress $1 $2
 }
 
 # Pretty print JSON
-cjson () {
+function cjson () {
   local url=$(echo $1)
   if [[ "http" == $url[0,4] ]] ; then
     curl --silent $url | python -mjson.tool | pygmentize -O style=monokai -f console256 -g
@@ -217,7 +217,7 @@ cjson () {
 }
 
 # Shortcut function to control Apache Tomcat Catalina script:
-catalina() {
+function catalina() {
   # Long-hand version:
   # Start:
   # $CATALINA_HOME/bin/startup.sh
@@ -232,7 +232,7 @@ catalina() {
 }
 
 # Freshen up your homebrew:
-freshbrew() {
+function freshbrew() {
   brew doctor
   brew update
   brew upgrade
