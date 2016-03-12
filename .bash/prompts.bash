@@ -243,6 +243,18 @@ prompt="\[$YELLOW\]$\[$RESET\]"
 top="\[$STEEL_BLUE\]┌─\[$RESET\]"
 bottom="\[$STEEL_BLUE\]└─\[$RESET\]"
 
+# @TODO: Clean this up (make like syntax above):
+# "who am i" is a check to see if logged in over ssh
+#if [[ -n "$(who am i | grep \()" ]]; then
+#  host=${red}
+#  path=${white}
+#else
+#  host=${green}
+#  path=${purple}
+#fi
+#host+="\h:"
+#path+='$(eval "echo ${truncated_path}")'"$ "
+
 export PS1=""
 export PS2="\[$ORANGE\]⇢ \[$RESET\]"
 
