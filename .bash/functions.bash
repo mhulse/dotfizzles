@@ -9,9 +9,9 @@ function calc() {
 # Reloads session:
 function reload() {
   source "$HOME/.bash_profile"
-  for f in "$HOME/.bash/"*; do
-     source "$f"
-  done
+#  for f in "$HOME/.bash/"*; do
+#    source "$f"
+#  done
 }
 
 function myip() {

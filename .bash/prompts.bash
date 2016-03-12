@@ -11,6 +11,7 @@
 # http://unix.stackexchange.com/a/269085/67282
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 # https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
+# http://superuser.com/questions/382456/
 
 #-------------------------------------------------------------------------------
 
@@ -237,10 +238,10 @@ host="\[$DODGER_BLUE\]\h\[$RESET\]"
 colon="\[$TURQUOISE\]:\[$RESET\]"
 path="\[$TOMATO\]\$(trunk)\[$RESET\]"
 dt="\[$UNDERLINE\]\[$YELLOW_GREEN\]\$(nice)\[$RESET\]"
-eol="\[$STEEL_BLUE\]¬\[$RESET\]"
+eol="\[$STEEL_BLUE\]¬\[$RESET\]\[\n\]"
 char="\$(emoji)"
 prompt="\[$YELLOW\]$\[$RESET\]"
-top="\[$STEEL_BLUE\]┌─\[$RESET\]"
+top="\[$STEEL_BLUE\]\[\n\]┌─\[$RESET\]"
 bottom="\[$STEEL_BLUE\]└─\[$RESET\]"
 
 # @TODO: Clean this up (make like syntax above):
@@ -258,4 +259,4 @@ bottom="\[$STEEL_BLUE\]└─\[$RESET\]"
 export PS1=""
 export PS2="\[$ORANGE\]➜ \[$RESET\]"
 
-PROMPT_COMMAND='__git_ps1 "\n\[$top\]\[$user\]\[$at\]\[$host\]\[$colon\]\[$path\] \[$dt\]" "\[$eol\]\n\[$bottom\]\[$char\] \[$prompt\] "'
+export PROMPT_COMMAND='__git_ps1 "\[$top\]\[$user\]\[$at\]\[$host\]\[$colon\]\[$path\] \[$dt\]" "\[$eol\]\[$bottom\]\[$char\] \[$prompt\] "'
