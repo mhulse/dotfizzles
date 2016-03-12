@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Quick and dirty calculator. Goes right to ruby and lets you print out
 # the results of math operations, or other ruby expressions.
 function calc() {

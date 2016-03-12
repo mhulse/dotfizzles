@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Color ls:
 colorflag="-G"
 alias ls="command ls ${colorflag}h"

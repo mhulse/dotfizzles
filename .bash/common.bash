@@ -1,9 +1,19 @@
+#!/bin/bash
+
 # Locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Default editor:
 export EDITOR=vim
+
+# Custom scripts:
+[[ -d "$HOME/.scripts" ]] && export PATH=$HOME/.scripts:$PATH
+
+# Postgres.app
+# http://postgresapp.com/
+# http://stackoverflow.com/a/24684701/922323
+export PATH=${PATH}:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
 # Ruby: rbenv
 if [ -d "$HOME/.rbenv/bin" ] ; then
@@ -13,11 +23,6 @@ fi
 
 # Ruby: rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Postgres.app
-# http://postgresapp.com/
-# http://stackoverflow.com/a/24684701/922323
-export PATH=${PATH}:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
 # Java
 # You may need to run:
