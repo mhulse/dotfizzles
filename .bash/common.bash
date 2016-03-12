@@ -5,7 +5,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Default editor:
-export EDITOR=vim
+export EDITOR=nano
 
 # Custom scripts:
 [[ -d "$HOME/.scripts" ]] && export PATH=$HOME/.scripts:$PATH

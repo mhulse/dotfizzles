@@ -17,6 +17,7 @@ function install() {
 	if (($1)); then
 		zip -r archive_name.zip noexist.foo > /dev/null 2>&1
 		zip -r "dotfizzles.$now.zip" \
+		       ".scripts" \
 		       ".bash" \
 		       ".bash_profile" \
 		       ".bashrc" \
@@ -26,7 +27,6 @@ function install() {
 		       ".hushlogin" \
 		       ".npmrc" \
 		       ".profile" \
-		       ".vimrc" \
 		       ".zshrc" \
 		       "mm.cfg" \
 		       > /dev/null 2>&1
