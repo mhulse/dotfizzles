@@ -232,17 +232,17 @@ WHITE_SMOKE=$(tput setaf $(fromhex "#F5F5F5"))
 YELLOW=$(tput setaf $(fromhex "#FFFF00"))
 YELLOW_GREEN=$(tput setaf $(fromhex "#9ACD32"))
 
-user="\[$DEEP_PINK\]\u\[$RESET\]"
-at="\[$REBECCA_PURPLE\]@\[$RESET\]"
-host="\[$DODGER_BLUE\]\h\[$RESET\]"
-colon="\[$TURQUOISE\]:\[$RESET\]"
-path="\[$TOMATO\]\$(trunk)\[$RESET\]"
-dt="\[$UNDERLINE\]\[$YELLOW_GREEN\]\$(nice)\[$RESET\]"
-eol="\[$STEEL_BLUE\]¬\[$RESET\]\[\n\]"
+user="\[$DEEP_PINK\]\u"
+at="\[$REBECCA_PURPLE\]@"
+host="\[$DODGER_BLUE\]\h"
+colon="\[$TURQUOISE\]:"
+path="\[$TOMATO\]\$(trunk)"
+dt="\[$YELLOW_GREEN\]\$(nice)"
+eol="\[$STEEL_BLUE\]¬\[\n\]"
 char="\$(emoji)"
-prompt="\[$YELLOW\]$\[$RESET\]"
-top="\[$STEEL_BLUE\]\[\n\]┌─\[$RESET\]"
-bottom="\[$STEEL_BLUE\]└─\[$RESET\]"
+top="\[$STEEL_BLUE\]\[\n\]┌─"
+bottom="\[$STEEL_BLUE\]└─"
+prompt="\[$YELLOW\]$\[$RESET\]" # https://github.com/mhulse/dotfizzles/issues/79
 
 # @TODO: Clean this up (make like syntax above):
 # "who am i" is a check to see if logged in over ssh
