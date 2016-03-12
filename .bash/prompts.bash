@@ -259,4 +259,4 @@ prompt="\[$YELLOW\]$\[$RESET\]" # https://github.com/mhulse/dotfizzles/issues/79
 export PS1=""
 export PS2="\[$ORANGE\]➜ \[$RESET\]"
 
-export PROMPT_COMMAND='__git_ps1 "\[$top\]\[$user\]\[$at\]\[$host\]\[$colon\]\[$path\] \[$dt\]" "\[$eol\]\[$bottom\]\[$char\] \[$prompt\] "'
+export PROMPT_COMMAND='__git_ps1 "\[$top\]\[$user\]\[$at\]\[$host\]\[$colon\]\[$path\]" " \[$dt\]\[$eol\]\[$bottom\]\[$char\] \[$prompt\] "'
