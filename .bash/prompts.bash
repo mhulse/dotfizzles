@@ -31,8 +31,8 @@ function fromhex() {
 
 function nice() {
   stamp="$(date '+%l:%M:%S%p')"
-  stamp="$(tr [A-Z] [a-z] <<< "$stamp")"
-  echo -e ${stamp%?}
+  #stamp="$(tr [A-Z] [a-z] <<< "$stamp")"
+  echo -e ${stamp%?} | awk '{print tolower($0)}'
 }
 
 function emoji() {
@@ -41,7 +41,7 @@ function emoji() {
 }
 #'$(eval "echo ${truncated_path}")'"$ "
 function trunk() {
-  trunclen=20
+  trunclen=30
   echo -e $(eval echo '$(echo -n "${PWD/#$HOME/~}" | awk -F "/" '"'"'{if (length($0) > '"$trunclen"') { if (NF>4) print $1 "/" $2 "/…/" $(NF-1) "/" $NF; else if (NF>3) print $1 "/" $2 "/…/" $NF; else print $1 "/…/" $NF; } else print $0;}'"'"')')
 }
 
