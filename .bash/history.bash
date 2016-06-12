@@ -11,3 +11,11 @@ shopt -s histappend                      # append to history, don't overwrite it
 
 # Save and reload the history after each command finishes
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+# NOTE: The below bindings can be found in the `/.inputrc` file.
+# If you don’t feel like utilizing both files for your particular setup, but
+# want fuzzy history search goodness, then just copy and paste the code in this
+# file (uncomment the below lines) into your chosen `profile` and you’ll be set.
+#
+# bind '"\e[A": history-search-backward'
+# bind '"\e[B": history-search-forward'
