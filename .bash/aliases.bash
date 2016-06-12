@@ -121,3 +121,6 @@ alias tomcat=catalina
 
 # List Atom packages:
 alias atompkgs="apm list --installed --bare"
+
+# Start blender from command line, used for debugging:
+alias blender="/Applications/blender.app/Contents/MacOS/blender"
