@@ -124,3 +124,8 @@ alias atompkgs="apm list --installed --bare"
 
 # Start blender from command line, used for debugging:
 alias blender="/Applications/blender.app/Contents/MacOS/blender"
+
+# Quick Look!
+# $ cd /Library/Desktop\ Pictures
+# $ qlf "Jaguar Aqua Graphite.jpg"
+alias qlf='qlmanage -p "$@" >& /dev/null'
