@@ -41,21 +41,19 @@ function emoji() {
 }
 
 function trunk() {
-  
   # Define the awk script using heredoc notation for easy modification:
   auk=$(cat << 'EOF'
     BEGIN { FS = OFS = "/" } {
       sub(ENVIRON["HOME"], "~")
       if (length($0) > 16 && NF > 4)
-        print $1,$2,".." NF-4 "..",$(NF-1),$NF
+        print $1,$2,"…" NF-4 "…",$(NF-1),$NF
       else
         print $0
     }
-  EOF)
+EOF
+  )
   dur=`echo $(echo -n "$PWD" | awk "$auk")`
-  
   echo -e $(eval 'echo "${dur}"')
-  
 }
 
 #-------------------------------------------------------------------------------
