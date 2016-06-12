@@ -118,3 +118,6 @@ alias xampp_start="sudo /Applications/XAMPP/xamppfiles/xampp start"
 # Tomcat stop:
 # $ tomcat stop
 alias tomcat=catalina
+
+# List Atom packages:
+alias atompkgs="apm list --installed --bare"
