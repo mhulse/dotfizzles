@@ -28,7 +28,6 @@ function install() {
 			   ".inputrc" \
 		       ".npmrc" \
 		       ".profile" \
-			   ".mkshrc" \
 		       ".zshrc" \
 		       "mm.cfg" \
 		       > /dev/null 2>&1
