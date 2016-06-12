@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # http://www.unixcl.com/2008/03/creating-menus-using-select-bash.html
 # http://askubuntu.com/questions/1705/how-can-i-create-a-select-menu-in-a-shell-script
@@ -25,9 +25,10 @@ function install() {
 		       ".gitconfig" \
 		       ".gitignore" \
 		       ".hushlogin" \
-			   ".inputrc" \
+		       ".inputrc" \
 		       ".npmrc" \
 		       ".profile" \
+		       ".mkshrc" \
 		       ".zshrc" \
 		       "mm.cfg" \
 		       > /dev/null 2>&1
@@ -37,13 +38,12 @@ function install() {
 	# Get the zip file and extract all files:
 	curl -sS -#L https://github.com/mhulse/dotfizzles/tarball/master | tar -xzv --strip-components 1 --exclude={install.sh,README.md}
 	
-	source $HOME/.bash_profile && reload
-	
 	# Let the use know that we are done:
-	echo $'\n'"Congrats! Installation was successful!"$'\n'
-	
-	# Open installation folder:
-	open "./"
+	echo $'\n'"--------------------------------------------------------------"
+	echo "Congrats! Installation was successful!"
+	echo "Run \"source ~/.bash_profile\" to reload your session."
+	echo "Optimally, it’s probably a good idea to restart your computer."
+	echo -e "\e[4mhttps://github.com/mhulse/dotfizzles\e[24m"
 	
 	exit 0
 	
