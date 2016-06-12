@@ -49,7 +49,7 @@ function install() {
 	
 }
 
-# Pick Illustrator version:
+# Ask the user if they want to backup their previous fizzles:
 function choose() {
 	
 	read -p "Back up previous versions (y/n)? " choice
