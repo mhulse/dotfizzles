@@ -41,3 +41,6 @@ export CATALINA_HOME='/Applications/tomcat' # Symlinked to latest Tomcat version
 # Check the window size after each command and, if necessary, update the
 # values of LINES and COLUMNS:
 shopt -s checkwinsize
+
+# Turn on recursive globbing (bash 4.x):
+shopt -s globstar
