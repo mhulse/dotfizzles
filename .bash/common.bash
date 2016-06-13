@@ -7,8 +7,11 @@ export LANG=en_US.UTF-8
 # Default editor:
 export EDITOR=nano
 
-# Custom scripts:
+# Required scripts:
 [[ -d "$HOME/.scripts" ]] && export PATH=$HOME/.scripts:$PATH
+
+# Custom scripts:
+[[ -d "$HOME/scripts" ]] && export PATH=$HOME/scripts:$PATH
 
 # Postgres.app
 # http://postgresapp.com/
