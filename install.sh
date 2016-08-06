@@ -15,7 +15,7 @@ function install() {
 	cd $HOME
 	
 	if (($1)); then
-		zip -r archive_name.zip noexist.foo > /dev/null 2>&1
+		#zip -r archive_name.zip noexist.foo > /dev/null 2>&1
 		zip -r "dotfizzles.$now.zip" \
 		       ".bash" \
 		       ".scripts" \
@@ -29,6 +29,7 @@ function install() {
 		       ".npmrc" \
 		       ".profile" \
 		       ".mkshrc" \
+			   ".virtualenvs" \
 		       ".zshrc" \
 		       "mm.cfg" \
 		       > /dev/null 2>&1
