@@ -131,3 +131,6 @@ alias qlf='qlmanage -p "$@" >& /dev/null'
 
 # Remove Duplicates from the “Open With” Right-Click Menu in Mac OS X:
 alias killdups='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
+
+# Open current directory in Finder.app and Atom.app:
+alias go="open . && atom ."
