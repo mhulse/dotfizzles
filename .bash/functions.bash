@@ -255,3 +255,8 @@ function freshruby() {
     echo "rvm not installed"
   fi
 }
+
+# Get application’s bundle identifier from its root path:
+function bid() {
+  mdls "$1" | grep kMDItemCF | cut -d '"' -f2
+}
