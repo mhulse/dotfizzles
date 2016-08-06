@@ -50,7 +50,6 @@ function repeat() {
 function parse_git_dirty() {
   [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
 }
-
 function parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
@@ -121,7 +120,7 @@ function ffe() {
   /usr/bin/find . -name '*'"$@"
 }
 
-# Search for a file using MacOS Spotlight's metadata:
+# Search for a file using MacOS Spotlight’s metadata:
 function spotlight() {
   mdfind "kMDItemDisplayName == '$@'wc"
 }
@@ -156,7 +155,7 @@ function tree() {
   sed -e "s/:$//" -e "s/[^-][^\/]*\//--/g" -e "s/^/ /" -e "s/-/|/"
 }
 
-# cd into the last focused finder window
+# `cd` into the last focused Finder window:
 function cdfinder(){
   cd "$(osascript -e 'tell application "Finder"' \
      -e 'set myname to POSIX path of (target of window 1 as alias)' \
@@ -186,28 +185,28 @@ function randpassw() {
   echo
 }
 
-# Image width
-function width () {
+# Image width:
+function width() {
   echo $(sips -g pixelWidth $1 | grep -oE "[[:digit:]]{1,}$")
 }
 
-# Image height
-function height () {
+# Image height:
+function height() {
   echo $(sips -g pixelHeight $1 | grep -oE "[[:digit:]]{1,}$")
 }
 
-# All the dig info, 'cause I can never remember it
-function digga () {
+# All the dig info, because I can never remember it:
+function digga() {
   dig +nocmd $1 any +multiline +noall +answer
 }
 
-# Copy w/ progress
-function cp_p () {
+# Copy w/progress:
+function cp_p() {
   rsync -WavP --human-readable --progress $1 $2
 }
 
-# Pretty print JSON
-function cjson () {
+# Pretty print JSON:
+function cjson() {
   local url=$(echo $1)
   if [[ "http" == $url[0,4] ]] ; then
     curl --silent $url | python -mjson.tool | pygmentize -O style=monokai -f console256 -g
