@@ -102,8 +102,6 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder
 
 # Default Python:
 alias python=python3
-# Default pyvenv:
-alias pyvenv=pyvenv-3
 # Default pip:
 alias pip=pip3
 
@@ -129,3 +127,6 @@ alias blender="/Applications/blender.app/Contents/MacOS/blender"
 # $ cd /Library/Desktop\ Pictures
 # $ qlf "Jaguar Aqua Graphite.jpg"
 alias qlf='qlmanage -p "$@" >& /dev/null'
+
+# Remove Duplicates from the “Open With” Right-Click Menu in Mac OS X:
+alias killdups='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
