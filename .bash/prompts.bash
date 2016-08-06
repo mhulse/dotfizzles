@@ -286,7 +286,7 @@ fi
 
 #-------------------------------------------------------------------------------
 
-env="\$(pyenviron)"
+env="\$(pyenviron)\[$RESET\]"
 user="\[$DEEP_PINK\]\u"
 at="\[$REBECCA_PURPLE\]@"
 host="\[$DODGER_BLUE\]\h"
