@@ -231,7 +231,7 @@ function catalina() {
   $CATALINA_HOME/bin/catalina.sh ${1:-start};
 }
 
-# Freshen up your homebrew:
+# Freshen up your Homebrew:
 function freshbrew() {
   brew doctor
   brew update
@@ -239,4 +239,20 @@ function freshbrew() {
   brew cleanup
   brew prune
   brew doctor
+}
+
+# Freshen up your Ruby:
+function freshruby() {
+  if which rvm >/dev/null; then
+    # Update rvm:
+    rvm get stable
+    # Update rvm Ruby:
+    rvm install ruby --latest && rvm use current
+    # Upgrade RubyGems:
+    gem update --system
+    # Update rvm gems:
+    gem update
+  else
+    echo "rvm not installed"
+  fi
 }
