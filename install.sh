@@ -17,11 +17,11 @@ function install() {
 	if (($1)); then
 		#zip -r archive_name.zip noexist.foo > /dev/null 2>&1
 		zip -r "dotfizzles.$now.zip" \
-			   ".virtualenvs" \
+		       ".virtualenvs" \
 		       ".bash_profile" \
 		       ".bash" \
 		       ".bashrc" \
-			   ".curlrc" \
+		       ".curlrc" \
 		       ".gemrc" \
 		       ".gitconfig" \
 		       ".gitignore" \
