@@ -56,7 +56,7 @@ function parse_git_branch() {
 
 # Find symlinks recursive:
 function findlinks() {
-  find $@ -type l -exec ls -l {} \;
+  find "$@" -type l -exec ls -l {} \;
 }
 
 # Extract based upon file ext:
@@ -87,7 +87,7 @@ function bz2() {
 }
 
 function man() {
-  /usr/bin/man $@ || (help $@ 2> /dev/null && help $@ | less)
+  /usr/bin/man "$@" || (help "$@" 2> /dev/null && help "$@" | less)
 }
 
 # Use DNS to query wikipedia (wiki QUERY):
@@ -140,12 +140,12 @@ function ii() {
 
 # Grabs headers from web page:
 function httpheaders() {
-  /usr/bin/curl -I -L $@
+  /usr/bin/curl -I -L "$@"
 }
 
 # Download a web page and show info on what took time:
 function httpdebug() {
-  /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n"
+  /usr/bin/curl "$@" -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n"
 }
 
 # Generates a tree view from the current directory:
