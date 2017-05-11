@@ -25,9 +25,6 @@ alias skim="(head -5; tail -5) <"
 # Sort files by size:
 alias sortbysize="ls -s | sort -n"
 
-# Say something with speech synthesis:
-alias say="espeak"
-
 # Show where you copy:
 alias cp="cp -v"
 
