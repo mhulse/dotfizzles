@@ -235,7 +235,7 @@ function freshbrew() {
   brew doctor
   brew update
   brew upgrade
-  brew cask list | xargs brew cask reinstall
+  brew cask outdated | xargs brew cask reinstall
   brew cleanup
   brew prune
   brew doctor
