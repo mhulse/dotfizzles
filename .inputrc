@@ -45,7 +45,7 @@ set completion-ignore-case on
 set expand-tilde on
 set show-all-if-ambiguous on
 set visible-stats on
-set -o nano
+set editing-mode nano
 
 # Bind the Tab key to cycle completions one at a time instead of listing them all
 # and requiring you to type characters until there’s only one match.
