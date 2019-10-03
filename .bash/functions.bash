@@ -261,3 +261,20 @@ function freshruby() {
 function bid() {
   mdls "$1" | grep kMDItemCF | cut -d '"' -f2
 }
+
+# Toggle invisible files in the Finder (e.g. `$ toggle`):
+function toggle() {
+  local current=$(defaults read com.apple.finder AppleShowAllFiles)
+  case "$current" in
+    1|TRUE|True|true|YES|Yes|yes)
+      defaults write com.apple.finder AppleShowAllFiles -boolean false
+      echo "Hidden files invisible!"
+      ;;
+    *)
+      defaults write com.apple.finder AppleShowAllFiles -boolean true
+      echo "Hidden files visible!"
+      ;;
+  esac
+  killall Finder /System/Library/CoreServices/Finder.app
+  echo "You can also use CMD + SHIFT + . (introduced in macOS Sierra)"
+}

@@ -108,12 +108,6 @@ alias killdock="killall -KILL Dock"
 # Opens up the IOS Simulator without launching xcode:
 alias iossimulator="(cd /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/ && open -a iPhone\ Simulator.app)"
 
-# Show hidden files in Finder:
-alias show="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app"
-# Hide hidden files in Finder:
-alias hide="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app"
-# NOTE: New since Sierra you can use this keyboard combo: COMMAND + SHIFT + .
-
 # Quick Look!
 # $ cd /Library/Desktop\ Pictures
 # $ qlf "Jaguar Aqua Graphite.jpg"
