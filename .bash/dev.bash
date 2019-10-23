@@ -4,6 +4,9 @@ alias atompkgs="apm list --installed --bare"
 # Start blender from command line, used for debugging:
 alias blender="/Applications/blender.app/Contents/MacOS/blender"
 
+# List VS Code packages:
+alias codepkgs="code --list-extensions | sed 's/^.*\.//'"
+
 # Alias git:
 alias g="git"
 
