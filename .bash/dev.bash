@@ -24,3 +24,6 @@ alias xampp="sudo /Applications/XAMPP/xamppfiles/xampp restart"
 alias xampp_stop="sudo /Applications/XAMPP/xamppfiles/xampp stop"
 alias xampp_start="sudo /Applications/XAMPP/xamppfiles/xampp start"
 alias xo='function __xo() { xampp && open "http://"$1; }; __xo'
+
+# Alias git:
+alias g="git"
