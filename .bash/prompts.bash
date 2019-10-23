@@ -258,31 +258,28 @@ function pyenviron() {
 
 #-------------------------------------------------------------------------------
 
-if [[ -s "$HOME/.scripts/git-prompt.sh" ]]; then
-  
-  source "$HOME/.scripts/git-prompt.sh"
-  
-  # Unstaged (*) and staged (+) changes will be shown next to the branch name.
-  GIT_PS1_SHOWDIRTYSTATE=1
-  
-  # If something is stashed, then a '$' will be shown next to the branch name.
-  GIT_PS1_SHOWSTASHSTATE=1
-  
-  # If there're untracked files, then a '%' will be shown next to the branch name.
-  GIT_PS1_SHOWUNTRACKEDFILES=1
-  
-  # See the difference between HEAD and its upstream.
-  # A "<" indicates you are behind, ">" indicates you are ahead, "<>" indicates
-  # you have diverged and "=" indicates that there is no difference.
-  GIT_PS1_SHOWUPSTREAM=("auto" "verbose" "name")
-  
-  # See more information about the identity of commits.
-  GIT_PS1_DESCRIBE_STYLE="default"
-  
-  # Colored hint about the current dirty state.
-  GIT_PS1_SHOWCOLORHINTS=1
-  
-fi
+# https://github.com/mhulse/dotfizzles/issues/213
+source "`brew --prefix git`/etc/bash_completion.d/git-prompt.sh"
+
+# Unstaged (*) and staged (+) changes will be shown next to the branch name.
+GIT_PS1_SHOWDIRTYSTATE=1
+
+# If something is stashed, then a '$' will be shown next to the branch name.
+GIT_PS1_SHOWSTASHSTATE=1
+
+# If there're untracked files, then a '%' will be shown next to the branch name.
+GIT_PS1_SHOWUNTRACKEDFILES=1
+
+# See the difference between HEAD and its upstream.
+# A "<" indicates you are behind, ">" indicates you are ahead, "<>" indicates
+# you have diverged and "=" indicates that there is no difference.
+GIT_PS1_SHOWUPSTREAM=("auto" "verbose" "name")
+
+# See more information about the identity of commits.
+GIT_PS1_DESCRIBE_STYLE="default"
+
+# Colored hint about the current dirty state.
+GIT_PS1_SHOWCOLORHINTS=1
 
 #-------------------------------------------------------------------------------
 
