@@ -47,3 +47,7 @@ shopt -s checkwinsize
 
 # Turn on recursive globbing (bash 4.x):
 shopt -s globstar
+
+# SDKMAN!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
