@@ -38,6 +38,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # http://tomcat.apache.org/
 export CATALINA_HOME='/Applications/tomcat' # Symlinked to latest Tomcat version.
 
+# For Homebrew:
+export PATH="/usr/local/sbin:$PATH"
+
 # Check the window size after each command and, if necessary, update the
 # values of LINES and COLUMNS:
 shopt -s checkwinsize
