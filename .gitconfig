@@ -1,45 +1,52 @@
 # http://git-scm.com/book/en/Customizing-Git-Git-Configuration
 # https://github.com/tiimgreen/github-cheat-sheet#git-configurations
 # http://haacked.com/archive/2014/07/28/github-flow-aliases/
-[user]
-  name = Micky Hulse
-  email = mickyhulse@gmail.com
+# Docs can be accessed via: `$ man git-<command>` (e.g. `$ man git-push`)
+
 [alias]
   aliases = config --get-regexp alias
-  amend = commit -a --amend
+  amend = commit --all --amend
   bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
   bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
   br = branch
   branches = branch -a
-  ci = commit
-  cm = !git add -A && git commit -m
+  brm = git branch --move # <new-branch-name>
+  c = commit
+  cam = !git add --all && git commit --message
+  cge = config --global --edit
+  cg = config --global # <option> <value>
+  cm = commit --message
   co = checkout
   cob = checkout -b
+  comf = git checkout origin/master # <file-path> OR <file-name>
   df = diff
-  ec = config --global -e
   g = grep -I
-  gc = commit -m
   gp = push
-  lg = log -p
+  lg = log --patch
   lol = !git log --graph --oneline --date-order --decorate --color --all -n 250
   loq = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   pb = publish-branch
+  p = push
+  pf = push --force
+  pn = push --set-upstream origin head
   rb = rbranch
+  rbm = rebase master
+  rbmi = rebase --interactive master
   rc = rank-contributors
-  remotes = remote -v
+  remotes = remote --verbose
   rv = review
-  save = !git add -A && git commit -m 'SAVEPOINT'
+  save = !git add --all && git commit -m 'SAVEPOINT'
   sm = show-merges
-  st = status -sb
-  tags = tag -l
-  undo = reset HEAD~1 --mixed
+  st = status --short --branch
+  tags = tag --list
+  undo = reset head~1 --mixed
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
-  wip = !git add -u && git commit -m "WIP"
-  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+  wip = !git add --update && git commit --message="WIP"
+  wipe = !git add --all && git commit --quiet --message='WIPE SAVEPOINT' && git reset head~1 --hard
 [core]
   autocrlf = false
-  # Use custom `.gitignore`:
-  excludesfile = /Users/mhulse/.gitignore
+  # Custom global `.gitignore` file:
+  excludesfile = ~/.gitignore
   # Treat spaces before tabs, lines that are indented with 8 or more
   # spaces, and all kinds of trailing whitespace as an error:
   whitespace = space-before-tab,indent-with-non-tab,trailing-space
@@ -53,9 +60,6 @@
   enabled = 1
 [branch]
   autosetuprebase = always
-[filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
 [color]
   # Use colors in Git commands that are capable of colored output when
   # outputting to the terminal:
@@ -75,27 +79,3 @@
   untracked = cyan
 [help]
   autocorrect = 1
-[filter "hawser"]
-  clean = git hawser clean %f
-  smudge = git hawser smudge %f
-  required = true
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
-[mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
-[url "git@github.com:"]
-  insteadOf     = "gh:"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-  insteadOf = "github:"
-[url "git@gist.github.com:"]
-  insteadOf     = "gst:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-  insteadOf = "gist:"
-[url "git@heroku.com:"]
-  insteadOf = "heroku:"
