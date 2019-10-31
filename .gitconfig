@@ -17,7 +17,9 @@
   cg = config --global # <option> <value>
   cm = commit --message
   co = checkout
-  cob = checkout -b
+  cob = checkout -b # <new-branch-name>
+  col = checkout -
+  com = checkout master
   comf = checkout origin/master # <file-path> OR <file-name>
   df = diff
   g = grep -I
