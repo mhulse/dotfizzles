@@ -10,7 +10,7 @@
   bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
   br = branch
   branches = branch -a
-  brm = git branch --move # <new-branch-name>
+  brm = branch --move # <new-branch-name>
   c = commit
   cam = !git add --all && git commit --message
   cge = config --global --edit
@@ -18,12 +18,12 @@
   cm = commit --message
   co = checkout
   cob = checkout -b
-  comf = git checkout origin/master # <file-path> OR <file-name>
+  comf = checkout origin/master # <file-path> OR <file-name>
   df = diff
   g = grep -I
   gp = push
   lg = log --patch
-  lol = !git log --graph --oneline --date-order --decorate --color --all -n 250
+  lol = log --graph --oneline --date-order --decorate --color --all -n 250
   loq = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   pb = publish-branch
   p = push
