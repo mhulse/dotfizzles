@@ -67,6 +67,9 @@ alias lsockt="sudo /usr/sbin/lsof -nP | grep TCP"
 # Display only open UDP sockets:
 alias lsocku="sudo /usr/sbin/lsof -nP | grep UDP"
 
+# Sort files by size:
+alias lss="ls -s | sort -n"
+
 # Create intermediate directories as required:
 alias mkdir="mkdir -p"
 
@@ -99,9 +102,6 @@ alias showblocked="sudo ipfw list"
 
 # Show beginning and end of provided file (`skim foo.txt`):
 alias skim="(head -5; tail -5) <"
-
-# Sort files by size:
-alias sortbysize="ls -s | sort -n"
 
 # Enable forwarding of the authentication agent connection:
 alias ssh="ssh -A"
