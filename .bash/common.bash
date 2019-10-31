@@ -7,16 +7,15 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 # Default editor:
 export EDITOR=nano
 
-# Required scripts:
-[[ -d "$HOME/.scripts" ]] && export PATH=$HOME/.scripts:$PATH
+# For Homebrew:
+export PATH="/usr/local/sbin:$PATH"
 
 # Custom scripts:
 [[ -d "$HOME/scripts" ]] && export PATH=$HOME/scripts:$PATH
 
 # Postgres.app
 # http://postgresapp.com/
-# http://stackoverflow.com/a/24684701/922323
-export PATH=${PATH}:/Applications/Postgres.app/Contents/Versions/9.3/bin
+[[ -d "/Applications/Postgres.app" ]] && export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/late‌st/bin
 
 # Ruby: rbenv
 if [ -d "$HOME/.rbenv/bin" ] ; then
@@ -37,9 +36,6 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Apache Tomcat
 # http://tomcat.apache.org/
 export CATALINA_HOME='/Applications/tomcat' # Symlinked to latest Tomcat version.
-
-# For Homebrew:
-export PATH="/usr/local/sbin:$PATH"
 
 # Check the window size after each command and, if necessary, update the
 # values of LINES and COLUMNS:
