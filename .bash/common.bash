@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Enable colorized output for `ls` command:
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
 # Default editor:
 export EDITOR=nano
 
