@@ -3,6 +3,17 @@
 # http://haacked.com/archive/2014/07/28/github-flow-aliases/
 # Docs can be accessed via: `$ man git-<command>` (e.g. `$ man git-push`)
 
+# There are 3 levels of git config:
+#   1) Project
+#        Only available for the current project and stored in `.git/config` in the project’s directory:
+#        $ git config user.name "John Doe"
+#   2) Global
+#        Available for all projects for the current user and stored in `~/.gitconfig`:
+#        $ git config --global user.name "John Doe"
+#   3) System
+#        Available for all the users/projects and stored in `/etc/gitconfig`:
+#        $ git config --system user.name "John Doe"
+
 [alias]
   aliases = config --get-regexp alias
   amend = commit --all --amend
