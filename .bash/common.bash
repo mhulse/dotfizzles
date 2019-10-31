@@ -29,7 +29,7 @@ fi
 # Java
 # You may need to run:
 # $ java --request
-# and click “More Info…” to visit the Java Developer Kit download website.
+# and click “More Info…” to visit the Java Developer Kit download website.
 export JRE_HOME=$(/usr/libexec/java_home)
 export JAVA_HOME=$(/usr/libexec/java_home)
 

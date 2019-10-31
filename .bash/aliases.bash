@@ -6,8 +6,17 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+# List Atom packages:
+alias atompkgs="apm list --installed --bare"
+
+# Start blender from command line, used for debugging:
+alias blender="/Applications/blender.app/Contents/MacOS/blender"
+
 # Removes a bunch of crap from your finder:
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete && find . -name 'Thumbs.db' -type f -ls -delete"
+
+# List VS Code packages:
+alias codepkgs="code --list-extensions | sed 's/^.*\.//'"
 
 # Show where you copy:
 alias cp="cp -v"
@@ -17,6 +26,12 @@ alias dt='date "+%F %T"'
 
 # Flush out the DNS cache:
 alias flushdns="dscacheutil -flushcache"
+
+# Alias git:
+alias g="git"
+
+# Open current directory in Finder.app and VS Code:
+alias o="open . && code ."
 
 # Color grep:
 alias grep="grep --color=auto"
@@ -41,6 +56,11 @@ alias l="ls -lFG"
 
 # All files, including dotfiles, in long format:
 alias la="ls -laFG"
+
+# Last command:
+alias lc="!!"
+# Last command as `sudo`:
+alias lcs="sudo !!"
 
 # Hides `.` and `..`, shows hidden items and ending slashes for
 # directories, and sorts in reverse chronological order:
@@ -85,6 +105,11 @@ alias openports="sudo lsof -i | grep LISTEN"
 # Copy the PWD to the Clipboard
 alias pwdc="pwd | tr -d '\n' | pbcopy"
 
+# Default pip:
+alias pip=pip3
+# Default Python:
+alias python=python3
+
 # Quickly search for file:
 alias qfind="find . -name "
 
@@ -110,6 +135,13 @@ alias ssh="ssh -A"
 alias tolower="pbpaste | tr "[:upper:]" "[:lower:]" | pbcopy"
 alias toupper="pbpaste | tr "[:lower:]" "[:upper:]" | pbcopy"
 
+# Apache Tomcat start:
+# $ tomcat
+# $ tomcat start
+# Tomcat stop:
+# $ tomcat stop
+alias tomcat=catalina
+
 # Trim whitespace (`tws file.txt`):
 alias tws="sed -i 's/[ \t]*$//' "
 
@@ -118,3 +150,9 @@ alias unigrep='grep -P "[^\x00-\x7F]"'
 
 # Weather from current location:
 alias weather="curl -s 'http://rss.accuweather.com/rss/liveweather_rss.asp?metric=1&locCode=en|us|brooklyn-ny|11215' | sed -n '/Currently:/ s/.*: \(.*\): \([0-9]*\)\([CF]\).*/\2°\3, \1/p'"
+
+# XAMPP shortcuts:
+alias xampp="sudo /Applications/XAMPP/xamppfiles/xampp restart"
+alias xampp_stop="sudo /Applications/XAMPP/xamppfiles/xampp stop"
+alias xampp_start="sudo /Applications/XAMPP/xamppfiles/xampp start"
+alias xo='function __xo() { xampp && open "http://"$1; }; __xo'
